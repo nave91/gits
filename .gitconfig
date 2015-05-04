@@ -1,0 +1,31 @@
+[user]
+	name = nave91
+	email = naveen.lekkalapudi@getbellhops.com
+[alias]
+	a = !git add . && git status
+	ac = !git add . && git commit
+	acm = !git add . && git commit -m
+	au = !git add -u . && git status
+	aa = !git add . && git add -u . && git status
+	ap = add -p
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+	c = commit
+	cm = commit -m
+	ca = commit --amend # careful
+	st = status -s
+	co = checkout
+	d = diff --color-words
+	dh = diff --color-words head
+	feat = "!f() { git checkout -b feature/$1; }; f"
+	fix = "!f() { git checkout -b hotfix/$1; }; f"
+	master = checkout master
+	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+	ls = log --pretty=format:"%C(yellow)%h\\ %Cgreen%cr\\ %Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate 
+	ll = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ld = log --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --stat
+	rst = "!f() { git checkout staging; git pull upstream; }; f"
+	s = status
+	up = "!f () { branch=\"$(git rev-parse --abbrev-ref HEAD)\"; git push origin $branch; }; f"
+[color]
+	ui = auto
+	interactive = auto
